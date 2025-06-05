@@ -84,3 +84,79 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+section h2, section h3 {
+    text-align: center;
+}
+
+.frmInsert {
+    margin: 0 auto;
+    width: 500px;
+}
+
+.frmInsert fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.frmInsert legend {
+    font-weight: bold;
+    font-size: 16px;
+    color: #666;
+}
+
+.frmInsert table {
+    width: 100%;
+}
+
+.frmInsert th {
+    text-align: right;
+    padding-right: 10px;
+    width: 150px;
+}
+
+.frmInsert td {
+    padding: 5px;
+}
+
+.frmInsert input, .frmInsert select {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.frmInsert button {
+    width: 100px;
+    padding: 8px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.frmInsert button[type="button"] {
+    background-color: #B1CCF5;
+    color: #333;
+    font-weight: bold;
+    float: right;
+}
+
+.frmInsert button[type="reset"] {
+    background-color: #f5f5f5;
+    color: #666;
+    font-weight: bold;
+    float: right;
+}
+
+.frmInsert button:hover {
+    opacity: 0.9;
+}
+
+.frmInsert select {
+    background-color: #F2F2F2;
+    color: #666;
+    font-weight: bold;
+}
