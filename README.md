@@ -1,62 +1,80 @@
-# Coldigo Geladeiras 🧊
+# Projeto REST com Jakarta EE e Jersey
 
-## Sobre o Projeto
-Sistema web desenvolvido para gerenciamento e apresentação da loja Coldigo Geladeiras, especializada em refrigeração desde 2007. O projeto inclui uma interface pública para clientes e uma área administrativa protegida.
+Este é um projeto de exemplo que demonstra a implementação de serviços REST usando Jakarta EE e Jersey.
 
-## 🛠️ Tecnologias Utilizadas
-* Java 11
-* Jakarta Servlet 5.0
-* Apache Tomcat 9.0.96
-* Maven
-* HTML5/CSS3/JavaScript
+## Tecnologias Utilizadas
 
-## 📁 Estrutura do Projeto
-~~~
+- Java 11
+- Jakarta EE 5.0
+- Jersey 3.1.10
+- Maven
+- JUnit 5.9.2
+
+## Estrutura do Projeto
+
+```
 src/
-  ├── main/
-  │   ├── java/          # Backend Java
-  │   ├── webapp/        # Frontend
-  │   │   ├── pages/     
-  │   │   │   ├── admin/ # Área Administrativa
-  │   │   │   └── sites/ # Interface Pública
-  │   │   ├── css/      
-  │   │   ├── js/       
-  │   │   └── imgs/     
-  │   └── resources/    
-  └── test/             
-~~~
+├── main/
+│   ├── java/
+│   │   └── com/
+│   │       └── example/
+│   │           └── projetotrilhawebinte/
+│   │               └── rest/
+│   └── webapp/
+│       └── WEB-INF/
+│           └── web.xml
+```
 
-## 🚀 Como Executar
-1. Certifique-se de ter instalado:
-   * JDK 11+
-   * Apache Tomcat 9.0.96
-   * Maven 3.x
+## Configuração
 
-2. Clone o repositório:
-~~~bash
-git clone [url-do-repositório]
-~~~
+O projeto utiliza Maven para gerenciamento de dependências. As principais dependências incluem:
 
-3. Compile o projeto:
-~~~bash
-mvn clean install
-~~~
+- `jakarta.servlet-api`: API de Servlet do Jakarta EE
+- `jersey-container-servlet`: Implementação do Jersey para Servlets
+- `jersey-hk2`: Suporte a injeção de dependências
+- `jersey-media-json-jackson`: Suporte a JSON
 
-4. Deploy no Tomcat:
-   * Deploy via IDE (recomendado para desenvolvimento)
-   * Ou copie o WAR para a pasta webapps do Tomcat
+## Como Usar
 
-## 📌 Endpoints
-* **Interface Pública**: `/ProjetoTrilhaWebInte_war_exploded/`
-* **Área Administrativa**: `/ProjetoTrilhaWebInte_war_exploded/pages/admin/`
+1. Clone o repositório
+2. Importe o projeto em sua IDE como um projeto Maven
+3. Execute `mvn clean install` para baixar as dependências
+4. Configure um servidor de aplicação (como Tomcat) em sua IDE
+5. Deploy o projeto no servidor
 
-## 🔧 Configuração de Desenvolvimento
-* IDE recomendada: IntelliJ IDEA
-* Configurar Tomcat na IDE
-* Usar "war exploded" para desenvolvimento
+## Endpoints REST
 
-## 📋 Funcionalidades
-* Catálogo de produtos
-* Gestão de estoque
-* Área administrativa
-* Sistema de contato
+Os serviços REST estarão disponíveis no caminho base `/rest/*`. Por exemplo:
+```
+http://localhost:8080/ProjetoTrilhaWebInte/rest/
+```
+
+## Desenvolvimento
+
+Para criar novos serviços REST:
+
+1. Crie uma nova classe no pacote `com.example.projetotrilhawebinte.rest`
+2. Use as anotações do Jakarta RS:
+   - `@Path`: Define o caminho do recurso
+   - `@GET`, `@POST`, `@PUT`, `@DELETE`: Define o método HTTP
+   - `@Produces`: Define o tipo de conteúdo retornado
+   - `@Consumes`: Define o tipo de conteúdo aceito
+
+## Testes
+
+O projeto inclui JUnit 5 para testes unitários. Os testes podem ser executados via Maven:
+
+```bash
+mvn test
+```
+
+## Licença
+
+[Sua escolha de licença]
+
+## Contribuição
+
+[Instruções para contribuição]
+
+---
+Desenvolvido como parte do projeto de estudo do SENAI.
