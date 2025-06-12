@@ -38,10 +38,8 @@ function valideFaleConosco(){
         return false;
     }
 
-
     return true;
 }
-
 
 function verificarMotivo(motivo){
     var elemento = document.getElementById("opcaoProduto");
@@ -86,7 +84,7 @@ function verificarMotivo(motivo){
 }
 
 $(document).ready(function () {
-    $("header").load("/ProjetoTrilhaWebInte_war_exploded/pages/sites/general/cabecalho.html")
-    $("nav").load("/ProjetoTrilhaWebInte_war_exploded/pages/sites/general/menu.html")
-    $("footer").load("/ProjetoTrilhaWebInte_war_exploded/pages/sites/general/rodape.html")
+    $("header").load("/ProjetoTrilhaWebInte_war_exploded/pages/sites/general/cabecalho.jsp")
+    $("nav").load("/ProjetoTrilhaWebInte_war_exploded/pages/sites/general/menu.jsp")
+    $("footer").load("/ProjetoTrilhaWebInte_war_exploded/pages/sites/general/rodape.jsp")
 })

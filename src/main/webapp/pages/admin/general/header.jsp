@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<img src="/ProjetoTrilhaWebInte_war_exploded/imgs/logo.png" alt="Logo do Website.">
+<img src="imgs/logo.png" alt="Logo do Website.">
 <h1>Coldigo Geladeiras - Administração</h1>
 <nav>
     <div class="opcao dropdown">

@@ -85,6 +85,10 @@ footer {
     padding: 10px;
 }
 
+#modalAviso{
+    display: none;
+}
+
 section h2, section h3 {
     text-align: center;
 }
@@ -159,4 +163,90 @@ section h2, section h3 {
     background-color: #F2F2F2;
     color: #666;
     font-weight: bold;
+}
+
+.aviso {
+    color: red !important;
+    font-weight: bold !important;
+}
+
+/* Formulários */
+.frmInsert, .frmFiltrar {
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.frmInsert {
+    width: 500px;
+}
+
+.frmFiltrar {
+    width: 350px;
+}
+
+.frmInsert label {
+    width: 200px;
+}
+
+.frmInsert textarea {
+    height: 100px;
+    resize: none;
+}
+
+.frmInsert button, .frmFiltrar button {
+    margin: 0 1%;
+    background-color: #b1ccf5;
+    font-weight: bold;
+    font-size: 16px;
+    float: right;
+}
+
+.frmInsert .aviso {
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Tabela de registros */
+.listaRegistros {
+    margin-bottom: 10px;
+}
+
+.listaRegistros table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    margin: 0 auto;
+    min-width: 50%;
+}
+
+.listaRegistros table th {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 5px;
+    border: 1px solid #B0C4DE;
+}
+
+.listaRegistros tr, .listaRegistros td {
+    font-size: 16px;
+}
+
+.listaRegistros tr:nth-child(even) {
+    background-color: #b1ccf5;
+}
+
+.listaRegistros tr:nth-child(odd) {
+    background-color: #83afd3;
+}
+
+.listaRegistros .acoes {
+    width: 70px;
+}
+
+.listaRegistros table img {
+    padding: 0 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }

@@ -14,16 +14,21 @@
     <base href="/ProjetoTrilhaWebInte_war_exploded/">
 
     <link rel="stylesheet" type="text/css" href="css/admin.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="js/admin.js"></script>
+    <script src="js/site.js"></script>
 </head>
 
 <body>
 <header>
 </header>
 <section>
-    <h2>que você deseja fazer hoje?</h2>
+    <h2>O que você deseja fazer hoje?</h2>
 </section>
+<div id="modalAviso"></div>
 <footer>
 </footer>
 </body>

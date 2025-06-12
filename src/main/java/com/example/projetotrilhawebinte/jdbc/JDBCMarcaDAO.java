@@ -23,6 +23,7 @@ public class JDBCMarcaDAO implements MarcaDAO {
         Marca marca = null;
 
         try {
+            System.out.println("Executando consulta: " + comando);
             Statement stmt = conexao.createStatement();
             ResultSet rs = stmt.executeQuery(comando);
 
@@ -36,9 +37,13 @@ public class JDBCMarcaDAO implements MarcaDAO {
                 marca.setNome(nome);
 
                 listMarcas.add(marca);
+                System.out.println("Marca encontrada: " + nome);
             }
 
+            System.out.println("Total de marcas encontradas: " + listMarcas.size());
+
         } catch (Exception ex) {
+            System.out.println("Erro ao buscar marcas: " + ex.getMessage());
             ex.printStackTrace();
         }
 

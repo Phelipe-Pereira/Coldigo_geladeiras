@@ -31,7 +31,7 @@
         fazer uma visita ou entre em contato para mais informações.
     </p>
 </section>
-</body>
-    <footer></footer>
+<footer></footer>
 <script src="js/site.js"></script>
+</body>
 </html>
