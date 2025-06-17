@@ -51,4 +51,20 @@ COLDIGO.produto.cadastrar = function() {
 
 $(document).ready(function() {
     COLDIGO.produto.carregarMarcas();
+
+    COLDIGO.produto.buscar = function() {
+
+        var valorBusca = $("#campoBuscaProduto").val();
+
+        $.ajax({
+            type: "GET",
+            url: COLDIGO.PATH + "produto/buscar",
+            data: "valorBusca=" + valorBusca,
+            success: function (dados) {
+            },
+            error: function (info) {
+                COLDIGO.exibirAviso("Erro ao consultar os contatos: " + info.status + " - " + info.statusText);
+            }
+        });
+    }
 });

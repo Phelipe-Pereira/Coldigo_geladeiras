@@ -15,25 +15,20 @@ public class UtilRest {
             .setPrettyPrinting()
             .create();
     }
-
     public Response buildResponse(Object result) {
         try {
-            System.out.println("Convertendo objeto para JSON...");
             String valorResposta = gson.toJson(result);
-            System.out.println("JSON gerado: " + valorResposta);
             
             return Response.ok(valorResposta)
                     .header("Content-Type", MediaType.APPLICATION_JSON)
                     .build();
         } catch (Exception e) {
-            System.out.println("Erro ao gerar JSON: " + e.getMessage());
             e.printStackTrace();
             return this.buildErrorResponse(e.getMessage());
         }
     }
 
     public Response buildErrorResponse(String errorMessage) {
-        System.out.println("Gerando resposta de erro: " + errorMessage);
         ResponseBuilder responseBuilder = Response.status(Response.Status.INTERNAL_SERVER_ERROR);
 
         String jsonError = gson.toJson(new ErrorResponse(errorMessage));
