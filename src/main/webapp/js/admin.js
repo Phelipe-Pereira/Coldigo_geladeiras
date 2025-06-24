@@ -1,4 +1,5 @@
 var COLDIGO = COLDIGO || {};
+COLDIGO.PATH = "/ProjetoTrilhaWebInte_war_exploded/rest/";
 
 COLDIGO.exibirAviso = function(aviso) {
     console.log("Tentando exibir modal com mensagem:", aviso);

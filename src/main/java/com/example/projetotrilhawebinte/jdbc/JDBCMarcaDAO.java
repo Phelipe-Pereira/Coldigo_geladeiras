@@ -23,7 +23,6 @@ public class JDBCMarcaDAO implements MarcaDAO {
         Marca marca = null;
 
         try {
-            System.out.println("Executando consulta: " + comando);
             Statement stmt = conexao.createStatement();
             ResultSet rs = stmt.executeQuery(comando);
 
@@ -37,16 +36,66 @@ public class JDBCMarcaDAO implements MarcaDAO {
                 marca.setNome(nome);
 
                 listMarcas.add(marca);
-                System.out.println("Marca encontrada: " + nome);
             }
 
-            System.out.println("Total de marcas encontradas: " + listMarcas.size());
-
         } catch (Exception ex) {
-            System.out.println("Erro ao buscar marcas: " + ex.getMessage());
             ex.printStackTrace();
         }
 
         return listMarcas;
+    }
+
+    @Override
+    public boolean inserir(Marca marca) {
+        String comando = "INSERT INTO marcas (nome) VALUES (?)";
+        try (java.sql.PreparedStatement p = this.conexao.prepareStatement(comando)) {
+            p.setString(1, marca.getNome());
+            p.execute();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean alterar(Marca marca) {
+        String comando = "UPDATE marcas SET nome=? WHERE id=?";
+        try (java.sql.PreparedStatement p = this.conexao.prepareStatement(comando)) {
+            p.setString(1, marca.getNome());
+            p.setInt(2, marca.getId());
+            p.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deletar(int id) {
+        // Verifica se há produtos vinculados à marca
+        String verifica = "SELECT COUNT(*) FROM produtos WHERE marcas_id=?";
+        try (java.sql.PreparedStatement p = this.conexao.prepareStatement(verifica)) {
+            p.setInt(1, id);
+            java.sql.ResultSet rs = p.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) {
+                // Existem produtos vinculados, não pode excluir
+                return false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        // Se não houver produtos vinculados, pode excluir
+        String comando = "DELETE FROM marcas WHERE id=?";
+        try (java.sql.PreparedStatement p = this.conexao.prepareStatement(comando)) {
+            p.setInt(1, id);
+            p.execute();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

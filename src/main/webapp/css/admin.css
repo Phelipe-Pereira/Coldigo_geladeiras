@@ -250,3 +250,7 @@ section h2, section h3 {
     height: 20px;
     cursor: pointer;
 }
+
+.modalEditar {
+    display: none;
+}

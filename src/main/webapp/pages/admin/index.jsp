@@ -27,6 +27,12 @@
 </header>
 <section>
     <h2>O que você deseja fazer hoje?</h2>
+    <label for="selCategoria">Categoria</label>
+    <select id="selCategoria" name="categoria">
+      <option value="">Selecione</option>
+      <option value="1">Geladeira</option>
+      <option value="2">Freezer</option>
+    </select>
 </section>
 <div id="modalAviso"></div>
 <footer>

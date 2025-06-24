@@ -10,7 +10,6 @@ public class Produto {
 
     public Produto() {}
 
-    // Getters e Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -24,7 +23,7 @@ public class Produto {
     public void setValor(double valor) { this.valor = valor; }
 
     public byte getCategoria() { return categoria; }
-    public void setCategoria(byte categoria) { this.categoria = categoria; }
+    public void setCategoria(int categoria) { this.categoria = (byte) categoria; }
 
     public int getIdMarca() { return idMarca; }
     public void setIdMarca(int idMarca) { this.idMarca = idMarca; }

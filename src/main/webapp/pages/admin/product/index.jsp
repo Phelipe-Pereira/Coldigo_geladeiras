@@ -63,6 +63,44 @@
     <div id="listaProdutos" class="listaRegistros">
 
     </div>
+    <!-- Modal de edição de produto -->
+    <div id="modalEditaProduto" class="modalEditar">
+        <form name="frmEditaProduto" id="editProduto" class="frmEditar">
+            <table>
+                <tr>
+                    <th>Categoria</th>
+                    <td>
+                        <select name="categoria" id="selCategoriaEdicao">
+                            <option value="">Selecione</option>
+                            <option value="1">Geladeira</option>
+                            <option value="2">Freezer</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Marca</th>
+                    <td>
+                        <select name="marcaId" id="selMarcaEdicao">
+                            <option value="" class="buscando">Aguarde, buscando marcas...</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Modelo</th>
+                    <td><input type="text" name="modelo" id="modelo"></td>
+                </tr>
+                <tr>
+                    <th>Capacidade(l)</th>
+                    <td><input type="text" name="capacidade" id="capacidade"></td>
+                </tr>
+                <tr>
+                    <th>Valor (R$)</th>
+                    <td><input type="text" name="valor" id="valor"></td>
+                </tr>
+            </table>
+            <input type="hidden" name="idProduto" id="idProduto">
+        </form>
+    </div>
 </div>
 <div id="modalAviso"></div>
 <script src="js/product.js"></script> 
