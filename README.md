@@ -10,7 +10,7 @@ Este projeto é um sistema web completo para cadastro, consulta, edição e excl
 - Maven
 - JUnit 5
 - Apache Tomcat 9+
-- Banco de Dados Relacional (ex: MySQL, PostgreSQL)
+- Banco de Dados Relacional (ex: MySQL)
 - HTML, CSS, JavaScript (jQuery)
 
 ## Estrutura do Projeto
